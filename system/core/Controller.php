@@ -50,6 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/userguide3/general/controllers.html
  */
+#[\AllowDynamicProperties]
 class CI_Controller {
 
 	/**
@@ -80,7 +81,7 @@ class CI_Controller {
 		// so that CI can run as one big super object.
 		foreach (is_loaded() as $var => $class)
 		{
-				$this->$var =& load_class($class);
+			$this->$var =& load_class ($class);
 		}
 
 		$this->load =& load_class('Loader', 'core');
